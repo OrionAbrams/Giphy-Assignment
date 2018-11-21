@@ -9,15 +9,22 @@
     background-image: url(../images/snesback.jpg)
 } */
 
-#movie-form {
-    float: right;
-    margin-right: 20px;
-}
 
-#div-container {
+/* #gif-container {
     float: left;
+} */
+
+.gif {
+    /* position: relative; */
+    padding: 10px;
+    float: left;
+    /* display: inline-block; */
 }
 
+/* .neat { */
+    /* position: absolute; */
+    /* display: block; */
+/* } */
 /* .btn-danger {
     white-space: normal;
 }

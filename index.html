@@ -11,32 +11,41 @@
 </head>
 
 <body>
-<h1>Giphy Stuff</h1>
 
-<div id="buttons-view"></div>
-<form id="movie-form">
-    <label for="movie-input">Add Something found in Nature</label>
-    <br>
-    <input type="text" id="movie-input">
-    <br>
-    <br>
-    <!-- Button triggers new movie to be added -->
-    <input id="add-movie" type="submit" value="Submit">
-  </form>
-<div class="container">
-    <div id="gif-container">teeeest</div>
-        
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col" id="buttons-view"></div>
+        </div>
 
 
+        <div class="row">
+            <div class="col-md-9" id="gif-container"></div>
+            
+
+            <div class="col-md-3">
+                <form id="movie-form">
+                    <label for="movie-input">Add Something found in Nature</label>
+                    <br>
+                    <input type="text" id="gif-input">
+                    <br>
+                    <br>
+                    <!-- Button triggers new movie to be added -->
+                    <input id="add-gif" type="submit" value="Submit">
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+    
 
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" 
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous">
-</script>
-<script src="assets/javascript/game.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+        </script>
+    <script src="assets/javascript/game.js"></script>
 </body>
 
 </html>
