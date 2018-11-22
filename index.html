@@ -11,7 +11,7 @@
 </head>
 
 <body>
-
+    <h3>Click on a button to show some gifs! Click a gif to play! Click again to pause!</h3>
     <div class="container">
         <div class="row">
             <div class="col" id="buttons-view"></div>
@@ -19,17 +19,18 @@
 
 
         <div class="row">
-            <div class="col-md-9" id="gif-container"></div>
-            
+            <div class="col-md-9">
+                <div id="gif-container"></div>
+            </div>
+
 
             <div class="col-md-3">
-                <form id="movie-form">
-                    <label for="movie-input">Add Something found in Nature</label>
+                <form id="gif-form">
+                    <label for="gif-input">Add a "nature" gif button</label>
                     <br>
                     <input type="text" id="gif-input">
                     <br>
                     <br>
-                    <!-- Button triggers new movie to be added -->
                     <input id="add-gif" type="submit" value="Submit">
 
 
@@ -37,7 +38,7 @@
             </div>
         </div>
     </div>
-    
+
 
 
 

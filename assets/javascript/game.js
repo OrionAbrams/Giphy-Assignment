@@ -23,6 +23,7 @@ renderButtons();
 $(document).on("click", ".gif-btn", displayGifs);
 
 function displayGifs() {
+  $("#gif-container").empty();
   var topic = $(this).attr("data-name");
   var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=oMBaD0jMiXQk30cFp3SWSP1OnRUt9EtN";
 
@@ -34,22 +35,21 @@ function displayGifs() {
     console.log(response)
 
     for (i = 0; i < topics.length; i++) {
-      var gifDiv = $("<div>");
+      var gifDiv = $("<div class='newGif'>");
 
       var image = $("<img>")
       image.attr({
         "src": response.data[i].images.fixed_height_still.url,
-        "data-still": response.data[i].images.fixed_height_still.url, 
+        "data-still": response.data[i].images.fixed_height_still.url,
         "data-animate": response.data[i].images.fixed_height.url,
         "data-state": "still", "class": "gif"
       });
 
-      var gifRating = $("<div>")
-      gifRating.text("Rating: " + response.data[i].rating)
+      var gifRating = $("<div>").text("Rating: " + response.data[i].rating.toUpperCase())
       gifRating.attr("class", "neat")
 
       gifDiv.append(image);
-      gifDiv.append(gifRating); //can't get the gif rating to stay with it's image
+      gifDiv.append(gifRating); //can't get the gif rating to stay with it's image and still have mutliple images on one row
 
       $("#gif-container").prepend(gifDiv);
     }
@@ -60,14 +60,20 @@ function displayGifs() {
 $("#add-gif").on("click", function (event) {
   event.preventDefault();
 
-  var gif = $("#gif-input").val().trim();
+  //making sure they can't add on an empty button
+  if ($("#gif-input").val().trim() == '') {
+    return;
+  }
+  else {
+    var gif = $("#gif-input").val().trim();
 
 
-  topics.push(gif);
+    topics.push(gif);
+    $("#gif-input").val('');
 
-  renderButtons();
+    renderButtons();
+  }
 });
-
 
 $(document).on("click", ".gif", function () {
 
