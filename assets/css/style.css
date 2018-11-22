@@ -9,9 +9,9 @@ h3 {
     color: white;
 }
 
-.newGif{
-    margin: 20px 20px 20px 0px;
-    display: inline-block;
+.new-gif{
+    margin: 10px 20px 20px 0px;
+    float: left;
 }
 .gif-btn {
     margin: 5px;

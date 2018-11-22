@@ -32,7 +32,7 @@ function displayGifs() {
     console.log(response)
 
     for (i = 0; i < topics.length; i++) {
-      var gifDiv = $("<div class='newGif'>");
+      var gifDiv = $("<div class='new-gif'>");
 
       var image = $("<img>")
       image.attr({
