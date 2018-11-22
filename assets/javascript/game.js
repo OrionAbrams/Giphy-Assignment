@@ -2,18 +2,14 @@ var topics = ["waterfall", "forest", "hurricane", "tornado", "ocean", "beach", "
 
 function renderButtons() {
 
+  //re-rendering all buttons each time one is added, empty previous ones
   $("#buttons-view").empty();
 
   for (var i = 0; i < topics.length; i++) {
-
     var topRow = $("<button>");
-
     topRow.addClass("gif-btn");
-
     topRow.attr("data-name", topics[i]);
-
     topRow.text(topics[i]);
-
     $("#buttons-view").append(topRow);
   }
 }
@@ -23,6 +19,7 @@ renderButtons();
 $(document).on("click", ".gif-btn", displayGifs);
 
 function displayGifs() {
+  //empty previous gifs to not have so many on one page
   $("#gif-container").empty();
   var topic = $(this).attr("data-name");
   var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=oMBaD0jMiXQk30cFp3SWSP1OnRUt9EtN";
@@ -48,9 +45,8 @@ function displayGifs() {
       var gifRating = $("<div>").text("Rating: " + response.data[i].rating.toUpperCase())
       gifRating.attr("class", "neat")
 
-      gifDiv.append(image);
-      gifDiv.append(gifRating); //can't get the gif rating to stay with it's image and still have mutliple images on one row
-
+      gifDiv.append(image, gifRating);
+      
       $("#gif-container").prepend(gifDiv);
     }
   });
