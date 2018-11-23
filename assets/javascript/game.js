@@ -22,7 +22,7 @@ function displayGifs() {
   //empty previous gifs to not have so many on one page
   $("#gif-container").empty();
   var topic = $(this).attr("data-name");
-  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=oMBaD0jMiXQk30cFp3SWSP1OnRUt9EtN";
+  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&limit=10&api_key=oMBaD0jMiXQk30cFp3SWSP1OnRUt9EtN";
 
   $.ajax({
     url: queryURL,
